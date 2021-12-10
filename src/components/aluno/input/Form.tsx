@@ -6,60 +6,54 @@ import DateField from 'react-native-datefield';
 interface Input {
     aluno: Aluno
     setAluno: any
-};
+  }
 
-
-const Form = ({aluno, setAluno}: Input) => {
-
-    return (
+const Form = ( { aluno, setAluno } : Input ) => {
+   
+    return(
         <View>
-            <TextInput placeholder="Nome do aluno"
-            value={aluno.nome}
-            onChangeText={ text => setAluno ({
+            <TextInput placeholder="Nome Aluno"
+            value= {aluno.nome}
+            onChangeText={ text => setAluno({
                 ...aluno,
-                nome: Text
-            })}
-            />
-            <TextInput placeholder="Sexo do aluno"
-            value={aluno.sexo}
-            onChangeText={ text => setAluno ({
-                 ...aluno,
-                 sexo: Text
-             })}
-            />
-            <TextInput placeholder="Turma do aluno"
-            value={aluno.turma}
-            onChangeText={ text => setAluno ({
-                 ...aluno,
-                 turma: Text
-             })}
-            />
+                nome: text
+            })} />
+            <TextInput placeholder="Sexo"
+            value= {aluno.sexo}
+            onChangeText={ text => setAluno({
+                ...aluno,
+                sexo: text
+            })} />
             <DateField 
-            defaultValue={aluno.dataNasc}
-            labelDate='Dia'
-            labelMonth='Mês'
-            labelYear='Ano'
-            onSubmit={data => setAluno({
-            ...aluno,
-            dataNasc: data
-            })}
-            />
-            <TextInput placeholder="Endereço do aluno"
-            value={aluno.endereco}
-            onChangeText={ text => setAluno ({
-                 ...aluno,
-                 endereco: Text
-             })}
-            />
-            <TextInput placeholder="Filiação do aluno"
-            value={aluno.filiacao}
-            onChangeText={ text => setAluno ({
-                 ...aluno,
-                 filiacao: Text
-             })}
-            />
-
+                defaultValue={aluno.dataNasc}
+                labelDate='Dia'
+                labelMonth='Mês'
+                labelYear='Ano'
+                onSubmit={data => setAluno({
+                    ...aluno,
+                datanasc: data
+                })}
+       />
+            <TextInput placeholder="Turma"
+            value= {aluno.turma}
+            onChangeText={ text => setAluno({
+                ...aluno,
+                turma: text
+            })} />
+            <TextInput placeholder="Endereco"
+            value= {aluno.endereco}
+            onChangeText={ text => setAluno({
+                ...aluno,
+                endereco: text
+            })} />
+            <TextInput placeholder="Nome da Mãe"
+            value= {aluno.filiacao}
+            onChangeText={ text => setAluno({
+                ...aluno,
+                filiacao: text
+            })} />
         </View>
     );
 };
+
 export default Form;

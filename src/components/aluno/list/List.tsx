@@ -20,7 +20,11 @@ function atualizarDados(){
             database.splice(0, database.length);
         
         doctument.docs.map((doc) => {
-            database.push(doc.data() as Aluno );
+            const estudante = doc.data() as Aluno;
+            database.push({
+                    id: doc.id,
+                    ...estudante
+                });
         });
         console.log(database);
     });

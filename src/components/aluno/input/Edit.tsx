@@ -8,12 +8,7 @@ function editar(){
 }
 
 function Edit(){
-const [aluno, setAluno] = useState<Partial<Aluno>>({
-    nome: 'Leandro',
-    sexo: 'Masculino',
-    turma: '1',
-    dataNasc: new Date(1992,11,16)
-    }); 
+const [aluno, setAluno] = useState<Partial<Aluno>>({}); 
 
     return (<View>
         <Form aluno={aluno as Aluno} setAluno={setAluno} />
